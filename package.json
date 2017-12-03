@@ -1,0 +1,24 @@
+{
+  "name": "telegram_bot_guess_number",
+  "version": "1.0.0",
+  "description": "Telegram bot",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^2.2.33",
+    "node-telegram-bot-api": "^0.29.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snatch3000/Telegram_bot_guess_number.git"
+  },
+  "author": "Ziganshin Denis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Snatch3000/Telegram_bot_guess_number/issues"
+  },
+  "homepage": "https://github.com/Snatch3000/Telegram_bot_guess_number#readme"
+}
