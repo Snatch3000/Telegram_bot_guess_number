@@ -7,7 +7,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start/, function (msg, match) {
     let fromId = msg.from.id;
-    bot.sendMessage(fromId, '/rules - Правила игры \n/newgame - Новая игра');
+    bot.sendMessage(fromId, `Привет, ${msg.from.first_name} \nОсновные команды:\n/rules - Правила игры \n/newgame - Новая игра`);
 });
 
 bot.onText(/\/rules/, function (msg, match) {
@@ -46,7 +46,6 @@ bot.onText(/\/newgame/, function (msg, match) {
             db.close();
         });
     });
-    
 });
 
 bot.onText(/\d\d\d\d/, function(msg, match){
@@ -76,15 +75,12 @@ bot.onText(/\d\d\d\d/, function(msg, match){
                 return console.log(err);
                 
             }
-            console.log(games);
+
             let text = operations.checkNumber(games[0].number, msg.text);
-            bot.sendMessage(_userId, `${text} Количество ходов: ${games[0].countMoves}`); 
+            bot.sendMessage(_userId, `${text}, Количество ходов: ${games[0].countMoves}`); 
             db.close();         
         });
-
-    });
-
-    
+    });  
 });
 
 
