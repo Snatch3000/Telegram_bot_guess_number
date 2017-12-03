@@ -1,16 +1,19 @@
-module.exports.makeNumber = function() {
+// создание случайного 4-х значного числа
+module.exports.makeNumber = function() {  
     
     return (Math.floor(Math.random()*10000)).toString();
 }
 
-module.exports.checkNumber = function(number, guessNum) {
+// Функция проверки совпадения пользовательского варианта числа с числом, загаданным ботом
+module.exports.checkNumber = function(number, guessNum) { 
     
-        let result = ''; 
-        let arrB = []; 
-            
+        let result = ''; // возвращаемое значение
+        let arrB = [];  // массив для цифр, которые присутствуют в числе, но не на том месте
+        
+        // первый цикл для проверки на точное совпадение цифр
         for(let i=0; i<number.length; i++) 
         { 
-            if (number[i] === guessNum[i]) { 
+            if (number[i] === guessNum[i]) {  
                     result += 'B'; 
             } 
             else { 
@@ -19,8 +22,10 @@ module.exports.checkNumber = function(number, guessNum) {
             } 
         }       
         
+        // второй цикл для обозначения цифр, которые присутствуют в числе, но не на том месте
         for (let j=0; j<number.length; j++) { 
-            if ((result[j] === '*') && (arrB.indexOf(guessNum[j]) !== -1)) {            
+            if ((result[j] === '*') && (arrB.indexOf(guessNum[j]) !== -1)) {
+                //если присутствует такая цифра, то она обозначается как "К"         
                 result = result.substr(0, j) + 'K' + result.substr(j + 1); 
             } 
             else { 
