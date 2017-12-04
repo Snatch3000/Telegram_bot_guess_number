@@ -25,7 +25,7 @@ bot.onText(/\/newgame/, function (msg, match) {
     let _number = operations.makeNumber(); // создание числа для конкретной игры конкретного пользователя
 
     // подключение к БД MongoDB
-    mongoClient.connect('mongodb://localhost:27017/gamesdb', function(err, db) { 
+    mongoClient.connect('mongodb://Denis:qwerty@ds129386.mlab.com:29386/gamesdb', function(err, db) { 
 
         if(err) { 
             return console.log(err);
@@ -60,7 +60,7 @@ bot.onText(/\d\d\d\d/, function(msg, match){
     let _userId = msg.from.id;
     let _chatId = msg.chat.id;
 
-    mongoClient.connect('mongodb://localhost:27017/gamesdb', function(err, db) {
+    mongoClient.connect('mongodb://Denis:qwerty@ds129386.mlab.com:29386/gamesdb', function(err, db) {
         if (err) { 
             return console.log(err);
         }
